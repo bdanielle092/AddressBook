@@ -5,14 +5,23 @@ namespace AddressBook
     public class AddressBook
     {
         public Dictionary<string, Contact> ContactList { get; set; }
-        public void AddContact(Contact newContact)
+
+        // constructor
+        public AddressBook()
         {
-            ContactList.Add(newContact.Email, newContact);
+            ContactList = new Dictionary<string, Contact>();
+        }
+        // adding a new contact
+        public void AddContact(Contact NewContact)
+        {
+            ContactList.Add(NewContact.Email, NewContact);
 
         }
-        public void GetByEmail(string email)
+        // getting contact by email
+        public Contact GetByEmail(string email)
         {
-            foreach (KeyValuePair<string, Contact> newContact.Email in AddressBook);
+            return ContactList[email];
+
         }
     }
 }
