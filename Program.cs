@@ -44,14 +44,14 @@ namespace AddressBook
             addressBook.AddContact(sue);
             addressBook.AddContact(juan);
 
-            // Try to addd a contact a second time
+            // Try to add a contact a second time
             try
             {
                 addressBook.AddContact(sue);
             }
-            catch (ArgumentException ex)
+            catch (Exception ex)
             {
-                Console.WriteLine("Tried to add something twice");
+                Console.WriteLine($"Tried to add a contact twice { ex.Message }");
             }
 
             // Create a list of emails that match our Contacts
@@ -80,7 +80,7 @@ namespace AddressBook
                 }
                 catch (KeyNotFoundException ex)
                 {
-                    Console.WriteLine("Email does not match the");
+                    Console.WriteLine("Email does not match");
                 }
             }
         }
